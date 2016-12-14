@@ -2,7 +2,7 @@ const express = require('express');
 const hbs = require('hbs'); //Handlebarsjs
 const fs = require('fs');
 
-const port = process.env.PORT || 3000; //Heroku and locally
+const port = process.env.PORT || 4000; //Heroku and locally
 var app = express();
 
 //Reusable chunk of codes partials.
@@ -50,6 +50,15 @@ res.render('home.hbs', {
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
+
+  });
+
+});
+
+app.get('/portfolio', (req, res) => {
+  res.render('portfolio.hbs', {
+    pageTitle: 'Portfolio Page',
+    welcomeMessage: 'Portfolio Page Created'
   });
 
 });
